@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进货form</title>
+
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.css">
+    <script src="static/js/jquery/jquery.js"></script>
+    <script>
+        // 列的name属性一样  value随着后台的数据输出变化而变化
+
+     function add_line(){
+         function ad_l() {
+                var tr = document.createElement("tr");  //创建tr标签
+                var td1 = document.createElement("th"); //创建td标签
+                var td2 = document.createElement("td"); //创建td标签
+                var td3 = document.createElement("td"); //创建td标签
+                var td4 = document.createElement("td"); //创建td标签
+                var td5 = document.createElement("td"); //创建td标签
+                var td6 = document.createElement("td"); //创建td标签
+                var td_seven = document.createElement("td"); //创建td标签
+
+                var td7 = document.createElement("select"); //创建select标签
+
+                var T_1 = document.createElement("input"); //在第二个里<td>标签里加 input标签
+
+                var T_2 = document.createElement("select"); //在第3个里<td>标签里加 select标签
+
+                var T_3 = document.createElement("input"); //在第4<td>标签里加 input标签
+
+
+                var T_4 = document.createElement("a"); //在第6个td标签里加a标签
+                var T_4_1 = document.createElement("img"); //在第6个td标签里加a标签
+
+                var T_seven_a = document.createElement("a"); //在第6个td标签里加a标签
+                var T_seven_img = document.createElement("img"); //在第6个td标签里加a标签
+
+
+                var atr1 = document.createAttribute("name"); //给第一个input标签加name属性
+                var atr2 = document.createAttribute("type"); //给第一个input标签加type属性
+                var atr1_1 = document.createAttribute("value");//给第一个input标签加value属性
+
+
+                var atr5 = document.createAttribute("name"); //给第3个input标签加type属性
+                var atr6 = document.createAttribute("type"); //给第3个input标签加type属性
+                var atr6_1 = document.createAttribute("value");//给第3个input标签加value属性
+
+                var atr7 = document.createAttribute("href");//在第6个td标签里的a标签加href属性
+
+                var atr8 = document.createAttribute("src");//在第6个td标签里的a标签加src属性
+                var atr9 = document.createAttribute("style"); //在第6个td标签里的a标签加style属性
+                //有四条数据  分别是 a b c d
+
+                var attr_seven_href = document.createAttribute("href");//在第7个td标签里的a标签加href属性
+                var attr_seven_src = document.createAttribute("src");//在第7个td标签里的a标签加src属性
+                var attr_seven_style = document.createAttribute("style");//在第7个td标签里的a标签加style属性
+
+                var tr_attr_name = document.createAttribute("name");
+                var tr_attr_value = document.createAttribute("value");
+
+
+                document.getElementById('t1').appendChild(tr);
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                tr.appendChild(td5);
+                tr.appendChild(td6);
+                tr.appendChild(td_seven);
+                td1.appendChild(td7);
+                td3.appendChild(T_2);
+
+
+                td2.appendChild(T_1);
+                td4.appendChild(T_3);
+                td5.innerHTML = "500";
+                td6.appendChild(T_4);
+                T_4.appendChild(T_4_1);
+                td_seven.appendChild(T_seven_a);
+                T_seven_a.appendChild(T_seven_img);
+
+
+
+                atr1.nodeValue = "name1";
+                atr2.nodeValue = "text"; //这三行代码：第二个td 标签里的 input标签添加属性值
+                atr1_1.nodeValue = "value_1";
+
+                atr5.nodeValue = "name3";
+                atr6.nodeValue = "text"; //这三行代码：第4个td 标签里的 input标签添加属性值
+                atr6_1.nodeValue = "value_3";
+
+                atr7.nodeValue = "/sss";//给6个td标签里的 a标签的 href属性设定值
+                atr8.nodeValue = "static/x_image.png";//给6个td标签里的 img标签的 src属性设定值
+                atr9.nodeValue = "high:15px;width:15px";//给6个td标签里的 img标签的 style属性设定值
+
+                attr_seven_href.nodeValue = "/dro?rec_id=" + ret_x[2];//给7个td标签里的 a标签的 href属性设定值
+                attr_seven_src.nodeValue = "static/yes_image.png";//给7个td标签里的 img标签的 src属性设定值
+                attr_seven_style.nodeValue = "high:15px;width:15px";//给7个td标签里的 img标签的 style属性设定值
+
+                tr_attr_value.nodeValue = ret_x[2];
+                tr_attr_name.nodeValue = "tr_name";
+
+                tr.attributes.setNamedItem(tr_attr_name);
+                tr.attributes.setNamedItem(tr_attr_value);
+
+                T_1.attributes.setNamedItem(atr1); //给第一个input标签添加属性
+                T_1.attributes.setNamedItem(atr2); //给第一个input标签加type属性
+                T_1.attributes.setNamedItem(atr1_1);
+
+                T_3.attributes.setNamedItem(atr5);
+                T_3.attributes.setNamedItem(atr6);//给第2个input标签加type属性
+                T_3.attributes.setNamedItem(atr6_1);
+
+                T_4.attributes.setNamedItem(atr7);//给6个td标签里的 a标签加 href属性
+                T_4_1.attributes.setNamedItem(atr8);//给6个td标签里的 src标签加 href属性
+                T_4_1.attributes.setNamedItem(atr9);//给6个td标签里的 src标签加 style属性
+
+                T_seven_a.attributes.setNamedItem(attr_seven_href);//给7个td标签里的 a标签加 href属性
+                T_seven_img.attributes.setNamedItem(attr_seven_src);//给7个td标签里的 src标签加 href属性
+                T_seven_img.attributes.setNamedItem(attr_seven_style);//给7个td标签里的 src标签加 style属性
+
+
+
+                var s = ret_x[0];
+
+                for (i = 0; i <= s.length - 1; i++) {
+                    var td8 = document.createElement("option");
+                    var attr10 = document.createAttribute("name");
+                    var attr11 = document.createAttribute("value");
+                    attr10.nodeValue = "read_name";
+                    attr11.nodeValue = "read_value";
+                    td8.attributes.setNamedItem(attr10);
+                    td8.attributes.setNamedItem(attr11);
+                    td8.innerHTML = s[i];
+                    td7.appendChild(td8);
+                }
+                ;
+
+                var u_u_2 = ret_x[1];
+
+                for (o = 0; o <= u_u_2.length - 1; o++) {
+                    var T_2_1 = document.createElement("option");
+                    var attr12 = document.createAttribute("name");
+                    var attr13 = document.createAttribute("value");
+                    attr12.nodeValue = "read_name_2";
+                    attr13.nodeValue = "read_value_2";
+                    T_2_1.attributes.setNamedItem(attr12);
+                    T_2_1.attributes.setNamedItem(attr13);
+                    T_2_1.innerHTML = u_u_2[o];
+                    T_2.appendChild(T_2_1);
+                }
+                ;
+
+            };
+
+         $.ajax({
+            async: false,
+            type: "POST",
+            url: "/dt_log",
+            success: function (log) {
+                ret_x = log;
+                ad_l();
+            },
+            error: function () {
+                console.log();
+                {
+                    alert('!!!!')
+                }
+            }
+        })
+           };
+
+
+ //     function SendAjax(){
+ //             var ss= document.getElementsByName('name1').values().valueOf();
+ //             console.log(ss);
+ //
+ //
+ //
+ //            $.ajax({
+ //                url:"/dat",
+ //                contentType: "POST",
+ //                data:{"head":"hello lyshark"},
+ //                success:function(data){
+ //                    if(data=="1"){
+ //                        alert("请求已经提交.");
+ //                    }
+ //                },
+ //                error:function(){
+ //                     alert("执行失败了...")
+ //                }
+ //            });
+ //
+ // };
+
+    </script>
+
+</head>
+<body>
+<div class="alert alert-light" role="alert">
+  <img src="static/not_sign.png" style="width:20px">
+  &nbsp
+  苍铭
+  &nbsp
+  <button type="button" class="btn btn-danger">退出</button>
+</div>
+<div style="background-color: #cce5ff">
+<button type="button" class="btn btn-outline-primary"><a href="fish_input_list_view">进货</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_output_list">出货</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_partner_list">联系人</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_warehouse_list">仓库</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_uom_list">计量单位</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_product_product_list">产品</a></button>
+    <button type="button" class="btn btn-outline-primary"><a href="work_location_list">作业地址</a></button>
+<button type="button" class="btn btn-outline-primary">作业类型</button>
+<button type="button" class="btn btn-outline-primary">作业流程</button>
+<button type="button" class="btn btn-outline-primary">货物调动</button>
+</div>
+
+<form method="POST">
+
+    <div class="alert alert-light" role="alert" style="background-color: #95999c">
+      <button type="button" class="btn btn-info"><a href="fish_input_create"><font color="#f0ffff">创建</font></a></button>
+      <button type="submit" class="btn btn-info" >保存</button>
+      </div>
+    </div>
+
+
+    <div>
+
+        <div style="margin-top: 30px"><font size="5px">进货编号:<input type="text" name="input_number"/></font> </div>
+
+        <div style="margin-top: 30px"><font size="5px">进货时间:<input type="datetime-local" name="input_time"></font> </div>
+
+
+        <div style="margin-top: 30px"><font size="5px">供应商:
+            <select>
+                <option value="苍铭">苍铭</option>
+                <option value="龙龙">龙龙</option>
+            </select></font> </div>
+
+        <div style="margin-top: 30px"><font size="5px">进货订单栏:</font> </div>
+
+        <div style="margin-top: 30px">
+        <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">产品名称</th>
+                    <th scope="col">数量</th>
+                    <th scope="col">计量单位</th>
+                    <th scope="col">单价</th>
+                    <th scope="col">小计</th>
+                    <th scope="col">删除</th>
+                    <th scope="col">确认</th>
+                </tr>
+                </thead>
+
+                <tbody id="t1">
+
+
+                </tbody>
+                 <tr>
+                     <td><button type="button" class="btn btn-primary" id="btt" onclick="add_line()">添加</button></td>
+                 </tr>
+            </table>
+            </div>
+
+
+    </div>
+        <div style="margin-top: 10px ;float: right ;margin-top: 20px"><font size="5px">>总价:</font> </div>
+
+</form>
+
+
+
+</body>
+</html>

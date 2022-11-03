@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加进货订单</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.css">
+
+</head>
+<script src="static/js/jquery/jquery.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<body>
+<div class="alert alert-light" role="alert">
+  <img ref="code" src="/static/partner_image_store/{{ imag }}" alt="png" style="width:20px">
+  &nbsp
+  苍铭
+  &nbsp
+  <button type="button" class="btn btn-danger">退出</button>
+</div>
+<div style="background-color: #cce5ff">
+<button type="button" class="btn btn-outline-primary"><a href="fish_input_list_view">进货</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_output_list">出货</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_partner_list">联系人</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_warehouse_list">仓库</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_uom_list">计量单位</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_product_product_list">产品</a></button>
+    <button type="button" class="btn btn-outline-primary"><a href="work_location_list">作业地址</a></button>
+<button type="button" class="btn btn-outline-primary">作业类型</button>
+<button type="button" class="btn btn-outline-primary">作业流程</button>
+<button type="button" class="btn btn-outline-primary">货物调动</button>
+
+</div>
+
+
+<form method="post">
+    <div class="alert alert-light" role="alert" style="background-color: #95999c">
+      <button type="button" class="btn btn-info"><a href="fish_partner_create"><font color="#f0ffff">创建</font></a></button>
+      <div style="float:right">
+          &nbsp <select ><option>sses</option></select>
+          &nbsp<input type="text" name="input_search"/>
+          &nbsp <button type="submit" class="btn btn-info">搜索</button>
+          &nbsp <button type="button" class="btn btn-info">结束搜索</button>
+      </div>
+    </div>
+
+
+    <div style="width:100%;background: url(static/background.png); ">
+
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">联系人名称</th>
+                <th scope="col">联系人号码</th>
+                <th scope="col">联系人地址</th>
+                <th scope="col">删除操作</th>
+                <th scope="col">查看操作</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+             <tr>
+                 <th>ss</th>
+                 <td>ssssss</td>
+                 <td>ssssss</td>
+                 <td><button type="button" class="btn btn-primary"><a href=""><font color="#f0ffff">删除</font></a></button></td>
+                 <td><button type="button" class="btn btn-primary"><a href="fish_partner_form"><font color="#f0ffff">查看</font></a></button></td>
+
+             </tr>
+            </tbody>
+
+
+        </table>
+
+</div>
+
+</form>
+
+
+</body>
+</html>

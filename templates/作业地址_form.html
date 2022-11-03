@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.css">
+    <script src="static/js/jquery/jquery.js"></script>
+</head>
+<body>
+<div class="alert alert-light" role="alert">
+  <img src="static/not_sign.png" style="width:20px">
+  &nbsp
+  苍铭
+  &nbsp
+  <button type="button" class="btn btn-danger">退出</button>
+</div>
+<div style="background-color: #cce5ff">
+<button type="button" class="btn btn-outline-primary"><a href="fish_input_list_view">进货</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_output_list">出货</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_partner_list">联系人</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_warehouse_list">仓库</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_uom_list">计量单位</a></button>
+<button type="button" class="btn btn btn-outline-primary"><a href="fish_product_product_list">产品</a></button>
+    <button type="button" class="btn btn-outline-primary"><a href="work_location_list">作业地址</a></button>
+<button type="button" class="btn btn-outline-primary">作业类型</button>
+<button type="button" class="btn btn-outline-primary">作业流程</button>
+<button type="button" class="btn btn-outline-primary">货物调动</button>
+</div>
+
+<form method="POST">
+
+    <div class="alert alert-light" role="alert" style="background-color: #95999c">
+      <button type="button" class="btn btn-info">创建</button>
+      <button type="submit" class="btn btn-info" >保存</button>
+      </div>
+    </div>
+
+     <div style="margin-top: 30px">
+
+        <font size="5px">地址名称:<input type="text" value="{{ row[0][1] }}" name="work_location_form_name"/></font></div>
+
+    <div style="margin-top: 30px">
+
+        <font size="5px">地址类型:<input type="text" value="{{ row[0][2] }}" name="work_location_form_type"/></font></div>
+
+    <input name="id_work_location_f" value="{{ row[0][0] }}" style="visibility:hidden"/>
+
+</form>
+
+
+
+</body>
+</html>

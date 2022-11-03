@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="static/js/jquery/jquery.js"></script>
+  <script type="text/javascript">
+        function SendAjax(){
+            $.ajax({
+                url:"/dataFromAjax",
+                contentType: "POST",
+                data:{"head":"hello lyshark"},
+                success:function(data){
+                    if(data=="1"){
+                        alert("请求已经提交.");
+                    }
+                },
+                error:function(){
+                     alert("执行失败了...")
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+
+   <form action="/dataFromAjax" method="post">
+        <input type="button" value="发送数据" onclick="SendAjax()">
+    </form>
+
+</body>
+</html>
